@@ -91,6 +91,7 @@ async def main():
                 miaospeedlib.SlaveRequestMatrixEntry(miaospeedlib.SlaveRequestMatrixType.TEST_PING_RTT, ""),
                 miaospeedlib.SlaveRequestMatrixEntry(miaospeedlib.SlaveRequestMatrixType.TEST_PING_CONN, ""),
             ]),
+            miaospeedlib.SlaveRequestConfigs().from_option(miaospeedlib.MiaoSpeedOption().from_obj(slave_cfg['option']))
         )
         ms = miaospeedlib.MiaoSpeed(slave_config = miaospeedlib.MiaoSpeedSlave().from_obj(slave_cfg), slave_request = msreq, proxyconfig=nodes)
         
